@@ -1,6 +1,12 @@
 # Large Language Model-Driven Closed-Loop UAV Operation with Semantic Observations
 
-This repository
+In this study, we propose a LLM-driven closed-loop control framework that enables reliable UAV operations powered by effective feedback and refinement using two LLM modules, i.e., a Code Generator and an Evaluator. Our framework transforms numerical state observations from UAV operations into natural language trajectory descriptions to enhance the evaluator LLM's understanding of UAV dynamics for precise feedback generation.
+
+<p align="center">
+   <img src="images/overall.png" alt="Diagram" width="50%" />
+</p>
+
+## Demonstration
 
 ## Setup
 
@@ -20,21 +26,38 @@ export OPENAI_API_KEY="your_openai_api_key"
 
 ### Python
 
-1. Install AirSim Python library [AirSim Python APIs](https://microsoft.github.io/AirSim/apis/).
+1. (Optional) Create a new virtual environment to prevent Python library conflicts.
 
-2. This project is tested under python `3.9`.
+2. Install AirSim Python library [AirSim Python APIs](https://microsoft.github.io/AirSim/apis/).
+
+3. This project is tested under python `3.9`.
 
 ---
 
-## Instructions
+## Usage
 
-1. Open AirSim "block" or other "pre-built" environment, make sure the environment has a clear space for drone flight.
+1. Clone this repository:
 
-2. run python file.
+   ```bash
+   git clone https://github.com/ai-uavsec/CLGSCE.git 
+   cd CLGSCE
+   ``` 
+
+2. Open AirSim "block" or other "pre-built" environment, make sure the environment has a clear space for drone flight.
+
+3. Active the virtual environment created in [Python](#python) setup.
+
+4. Run python file.
 
    ```bash
    python CLGSCE.py -m NL -t advanced
    ```
+
+   -m, --method {GSCE,self-refine,numerical,NL}, the default method is "NL".
+
+   -t, --task {basic,advanced}, the default task set is "advanced".
+
+5. See evaluation result at `/log` folder.
 
 ---
 
