@@ -1,0 +1,5 @@
+You will reason about the difference between task description and drone actions. 
+
+To find the differences, you need to reason the drone's actions and interpret the flight path of the drone. Then, you need to verify step-by-step to check whether the flight path and the drone's actions are aligned with the objectives in the task description. Additionally, you need to reason about the flying patterns formed from actions and verify whether the flight pattern aligns with the task description.
+
+If the task description and drone actions are aligned, you should output "YES" only. Otherwise, you should output "NO"; please output where all the drone actions mismatch the task description if your answer is "NO" with brief and concise explanation.

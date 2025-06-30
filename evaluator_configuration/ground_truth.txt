@@ -1,0 +1,40 @@
+YES
+YES
+YES
+YES
+YES
+YES
+YES
+YES
+YES
+YES
+YES
+YES
+YES
+YES
+YES
+YES
+YES
+YES
+YES
+YES
+1 NO! Action2 Fly 3 meter up instead of 5 meters.
+2 NO! Action4 Turn counterclockwise instead of clockwise and the following actions
+3 NO! Action8 Missing one turn action after Action 7.
+4 NO! Action3 Missing one turn action before Action 3. The drone is not flying opposite to its flying direction.
+5 NO! Action5 fly 4 meters instead of 5 meters.
+6 NO! Action3 or Action4 resulting The drone is not orient perpendicular in the following orientations (45 instead of 90)
+7 NO! The reverse square pattern (Actions 11–19) is executed incorrectly. Instead of reversing the original path with mirrored (counterclockwise) turns and proper perpendicular orientations (e.g. the first reverse leg should fly east while facing north), the actions use clockwise turns and improper orientations.
+8 NO! Action11: the drone flies second square without orient perpendicular
+9 NO! Actions 4, 6, 8, 10, 15, and 17 exhibit mismatches. Specifically, for the left square the drone does not begin by flying left as required (Action 4 flies south instead of west relative to its orientation) and its subsequent legs (Actions 6, 8, and 10) do not have the drone oriented in the actual flight direction to form a proper square; similarly, for the right square after starting forward (Action 11), Actions 15 and 17 show flight directions and orientations that do not align with the requisite square pattern.
+10 NO! - For the left square, the drone’s initial flight leg (Action 3) is flown left (west) but with the drone still facing north instead of facing west as required. - For the left square, the subsequent turns do not ensure the drone’s heading always matches its flying direction. - For the right square, although Action 11 correctly starts moving north, the drone does not adopt the perpendicular (examining) orientation on each side as required.
+11 NO! Action7 Fly up 5 meters, which is not required in task
+12 NO! Action2 Fly 3 meter up instead of 5 meters.
+13 NO! The second square pattern is incomplete, missing the final 5 m westward flight segment to complete the square.
+14 NO! Action 3: Drone flies north while facing north instead of facing south (opposite to motion).
+15 NO! Action 4: Drone turn to face west instead of east, cause the incorrect orientation of square pattern
+16 NO! Mismatch 1: The second square pattern is not correctly flown. Instead of forming a distinct square after the 5 m north shift, the actions oscillate between [5,0] and [5,5]. Mismatch 2: During the second square, the drone’s orientation does not remain perpendicular to the movement direction as required (e.g., flying east while facing east rather than a perpendicular heading).
+17 NO!  not facing inward due to action turn clockwise instead of counterclockwise in action 4
+18 NO! Mismatches in the second square. Actions 12–20 do not produce a square that is mirrored about the north–south axis
+19 NO! drone not oriented to the flying direction (start from Action3: flying west while facing north)
+20 NO! The drone did not orient inward perpendicular to examine the second square.
