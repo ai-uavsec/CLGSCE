@@ -8,8 +8,6 @@ This repository
 
 Install [AirSim](https://github.com/microsoft/AirSim).
 
-Install [AirSim Python APIs](https://microsoft.github.io/AirSim/apis/).
-
 Download pre-build AiSim environment ["Releases"](https://github.com/Microsoft/AirSim/releases), recommend using "Block".
 
 ### OpenAI Setup
@@ -22,13 +20,15 @@ export OPENAI_API_KEY="your_openai_api_key"
 
 ### Python
 
+Install AirSim Python library [AirSim Python APIs](https://microsoft.github.io/AirSim/apis/).
+
 This project is tested under python `3.9`.
 
 ---
 
 ## Instructions
 
-1. Open AirSim "block" or other.
+1. Open AirSim "block" or other "pre-built" environment, make sure the environment has a clear space for drone flight.
 
 ```bash
 python CLGSCE.py -m NL -t advanced
