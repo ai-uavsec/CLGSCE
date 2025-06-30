@@ -3,7 +3,7 @@
 In this study, we propose a LLM-driven closed-loop control framework that enables reliable UAV operations powered by effective feedback and refinement using two LLM modules, i.e., a Code Generator and an Evaluator. Our framework transforms numerical state observations from UAV operations into natural language trajectory descriptions to enhance the evaluator LLM's understanding of UAV dynamics for precise feedback generation.
 
 <p align="center">
-   <img src="images/overall.png" alt="Diagram" width="50%" />
+   <img src="figures/overall.png" alt="Diagram" width="50%" />
 </p>
 
 ## Demonstration
