@@ -9,19 +9,20 @@ aw = AirSimWrapper()
 '''
 evaluate code
 '''
-def evaluate_task(task_name):
+def evaluate_task(task_name, method):
     print(f"Evaluating {task_name} ...")
     # read task prompt text file with respect to task name
-    with open("task_prompts/" + task_name + ".txt", 'r') as file:
+    with open("task_sets/" + task_name + ".txt", 'r') as file:
         tasks = file.readlines()
     len_tasks = len(tasks)
     
-    overwrite_log("result")	# clear history result log
+    overwrite_log(task_name + '_' + method + '_result')	# clear history result log
 
     if task_name == "basic" or "advanced":
         # read generated code from log
-        with open("log/" + task_name + ".txt", 'r', encoding="utf-8") as file:
+        with open("log/" + task_name + '_' + method + ".txt", 'r', encoding="utf-8") as file:
             lines = file.readlines()
+
         # load ground truth state changes for each task
         changes = np.loadtxt("ground_truth/" + task_name + ".txt")
         state_changes = []
@@ -54,7 +55,7 @@ def evaluate_task(task_name):
                 # compute completeness
                 completeness = success/len(state_change)
                 overall_completeness += completeness
-                log(str(completeness) + " " +str(i), "result", "\n")
+                log(str(completeness) + " " +str(i), task_name + '_' + method + '_result', "\n")
                 # compute success rate (SR)
                 if completeness == 1:
                     overall_success += 1
@@ -105,7 +106,8 @@ def evaluate_task(task_name):
                             # if movement matches ground truth within tolerance, count as success action
                             if state_change[index][0] == 1 and abs(check_equality[0]) < 1.5 and abs(check_equality[1]) < 1.5 and abs(check_equality[2]) < 1.5 and abs(check_equality[3]) < 6:
                                 success += 1
-                            print(state_change[index][1:5], differences, success)
+                            
+                            # update index
                             if len(state_change) > 1:
                                 index += 1
                             else:
@@ -121,18 +123,18 @@ def evaluate_task(task_name):
     # store result to result.txt
     if isinstance(result, list):
         result = ' '.join(map(str, result))	# converts a list of elements into a single string, with each element separated by a space.
-        log(result, "result", "  " + task_name + "\n")
+        log(result, task_name + '_' + method + '_result', "  " + task_name + "\n")
     else:
-        log(result, "result", "  " + task_name + "\n")
+        log(result, task_name + '_' + method + '_result', "  " + task_name + "\n")
     print(f"{task_name} result: {result}")
 
     # store how many times tasks are repeated
     repeat = i/len_tasks
-    log("repeat times: ", "result", str(repeat) + "\n")
+    log("repeat times: ", task_name + '_' + method + '_result', str(repeat) + "\n")
     
     # store date & time to .txt for reference 
     now = datetime.datetime.now()
-    log(now.strftime("%Y-%m-%d %H:%M:%S"), "result", "\n")	# transfrom to human-readable format
+    log(now.strftime("%Y-%m-%d %H:%M:%S"), task_name + '_' + method + '_result', "\n")	# transfrom to human-readable format
     
     return result
 
@@ -403,5 +405,5 @@ def numerical_observation(response):
 
 if __name__ == "__main__":
     # run evaluation for 'advanced' task if script is executed directly
-    result = evaluate_task("advanced")
+    result = evaluate_task("advanced", "GSCE")
     print(f"***Evaluate via evaluate.py***    success rate: {result}")

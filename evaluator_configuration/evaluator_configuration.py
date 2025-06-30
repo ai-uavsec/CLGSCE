@@ -1,5 +1,6 @@
 import argparse
 from openai import OpenAI
+import os.path
 
 
 # arguments for configuration selection
@@ -13,21 +14,21 @@ args = parser.parse_args()
 configuration = args.configuration
 
 # read all trajectories from file (each line is a trajectory)
-with open("evaluator_configuration/trajectories.txt", "r") as f:
+with open("trajectories.txt", "r") as f:
 	trajectories = f.readlines()
 
 # load system prompt based on the configuration argument
 if configuration == "1":
-    with open("evaluator_configuration/system_prompts/role.txt", "r") as f:
+    with open("system_prompts/role.txt", "r") as f:
         evaluator_sysprompt = f.read()
 elif configuration == '2':
-    with open("evaluator_configuration/system_prompts/role_rule.txt", "r") as f:
+    with open("system_prompts/role_rule.txt", "r") as f:
         evaluator_sysprompt = f.read()
 elif configuration == '3':
-    with open("evaluator_configuration/system_prompts/role_reference.txt", "r") as f:
+    with open("system_prompts/role_reference.txt", "r") as f:
         evaluator_sysprompt = f.read()
 elif configuration == '4':
-    with open("evaluator_configuration/system_prompts/role_rule_reference.txt", "r") as f:
+    with open("system_prompts/role_rule_reference.txt", "r") as f:
         evaluator_sysprompt = f.read()
 else:
     print('Unknown configuration. Please select from \"1\", \"2\", \"3\", and \"4\", the default is \"4\" (roles, rules, references).')
@@ -73,7 +74,8 @@ feedback_model_name = "o3-mini" # the model is "o3-mini-2025-01-31" when conduct
 repeat = 3
 
 # read task prompt text file with respect to task name
-with open("task_prompts" + task_name + ".txt", 'r') as file:
+
+with open(os.path.dirname(os.path.dirname(__file__)) + "/task_sets/" + task_name + ".txt", 'r') as file:
     tasks = file.readlines()
 len_tasks = len(tasks)
 
