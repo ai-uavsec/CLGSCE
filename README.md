@@ -26,11 +26,16 @@ export OPENAI_API_KEY="your_openai_api_key"
 
 ### Python
 
+   Note: This project is tested under python `3.9.23`.
 1. (Optional) Create a new virtual environment to prevent Python library conflicts.
 
 2. Install AirSim Python library [AirSim Python APIs](https://microsoft.github.io/AirSim/apis/).
+3. Install Python libraries:
 
-3. This project is tested under python `3.9`.
+   ```bash
+   pip install openai
+   pip install numpy
+   ```
 
 ---
 
@@ -43,7 +48,7 @@ export OPENAI_API_KEY="your_openai_api_key"
    cd CLGSCE
    ``` 
 
-2. Open AirSim "block" or other "pre-built" environment, make sure the environment has a clear space for drone flight.
+2. Open AirSim "block" or other "pre-built" environment, make sure the environment has a open space (at least a 20 meters cubic) for drone flight.
 
 3. Active the virtual environment created in [Python](#python) setup.
 
