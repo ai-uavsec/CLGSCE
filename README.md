@@ -1,6 +1,6 @@
 # Large Language Model-Driven Closed-Loop UAV Operation with Semantic Observations
 
-In this study, we propose a LLM-driven closed-loop control framework that enables reliable UAV operations powered by effective feedback and refinement using two LLM modules, i.e., a Code Generator and an Evaluator. Our framework transforms numerical state observations from UAV operations into natural language trajectory descriptions to enhance the evaluator LLM's understanding of UAV dynamics for precise feedback generation.
+In this study, we propose a LLM-driven closed-loop control framework that enables reliable UAV operations powered by effective feedback and refinement using two LLM modules, i.e., a **Code Generator** and an **Evaluator**. Our framework transforms numerical state observations from UAV operations into natural language trajectory descriptions to enhance the evaluator LLM's understanding of UAV dynamics for precise feedback generation.
 
 <p align="center">
    <img src="figures/overall.png" alt="Diagram" width="50%" />
@@ -8,13 +8,17 @@ In this study, we propose a LLM-driven closed-loop control framework that enable
 
 ## Demonstration
 
+<p align="center">
+  <img src="figures/demo.gif" alt="Project Demo" width="800"/>
+</p>
+
 ## Setup
 
 ### AirSim Setup
 
 1. Install [AirSim](https://github.com/microsoft/AirSim).
 
-2. Download pre-build AiSim environment ["Releases"](https://github.com/Microsoft/AirSim/releases), recommend using "Block".
+2. Download pre-build AiSim environment ["Releases"](https://github.com/Microsoft/AirSim/releases), recommend downloading "Block".
 
 ### OpenAI Setup
 
@@ -27,6 +31,7 @@ export OPENAI_API_KEY="your_openai_api_key"
 ### Python
 
    Note: This project is tested under python `3.9.23`.
+
 1. (Optional) Create a new virtual environment to prevent Python library conflicts.
 
 2. Install AirSim Python library [AirSim Python APIs](https://microsoft.github.io/AirSim/apis/).
@@ -48,7 +53,7 @@ export OPENAI_API_KEY="your_openai_api_key"
    cd CLGSCE
    ``` 
 
-2. Open AirSim "block" or other "pre-built" environment, make sure the environment has a open space (at least a 20 meters cubic) for drone flight.
+2. Open AirSim "block" or other "pre-built" environment, make sure the environment has a open space (at least a 20-meter cubic) for drone flight.
 
 3. Active the virtual environment created in [Python](#python) setup.
 
@@ -62,7 +67,7 @@ export OPENAI_API_KEY="your_openai_api_key"
 
    -t, --task {basic,advanced}, the default task set is "advanced".
 
-5. See evaluation result at `/log` folder.
+5. See evaluation results in `/log` folder.
 
 ---
 
