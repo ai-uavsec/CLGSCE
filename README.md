@@ -74,7 +74,15 @@ export OPENAI_API_KEY="your_openai_api_key"
 ## Citation
 
 ```
-
+@misc{wang2025largelanguagemodeldrivenclosedloop,
+      title={Large Language Model-Driven Closed-Loop UAV Operation with Semantic Observations}, 
+      author={Wenhao Wang and Yanyan Li and Long Jiao and Jiawei Yuan},
+      year={2025},
+      eprint={2507.01930},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO},
+      url={https://arxiv.org/abs/2507.01930}, 
+}
 ```
 
 ---
