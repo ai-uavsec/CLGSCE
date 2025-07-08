@@ -8,10 +8,6 @@ In this study, we propose a LLM-driven closed-loop control framework that enable
 
 ## Demonstration
 
-<!-- <p align="center">
-  <img src="figures/demo.gif" alt="Project Demo" width="800"/>
-</p> -->
-
 [![▶️ Demo Video](https://img.youtube.com/vi/6LZs9KjdODc/0.jpg)](https://youtu.be/6LZs9KjdODc)
 
 ## Setup
