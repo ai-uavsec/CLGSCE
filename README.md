@@ -8,14 +8,7 @@ In this study, we propose a LLM-driven closed-loop control framework that enable
 
 ## Demonstration
 
-<iframe width="560" height="315"
-  src="https://youtu.be/6LZs9KjdODc"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen>
-</iframe>
-
-<!-- [![▶️ Demo Video](https://img.youtube.com/vi/6LZs9KjdODc/0.jpg)](https://youtu.be/6LZs9KjdODc) -->
+[![▶️ Demo Video](https://img.youtube.com/vi/6LZs9KjdODc/0.jpg)](https://youtu.be/6LZs9KjdODc)
 
 ## Setup
 
