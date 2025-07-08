@@ -8,9 +8,11 @@ In this study, we propose a LLM-driven closed-loop control framework that enable
 
 ## Demonstration
 
-<p align="center">
+<!-- <p align="center">
   <img src="figures/demo.gif" alt="Project Demo" width="800"/>
-</p>
+</p> -->
+
+[![▶️ Demo Video](https://img.youtube.com/vi/6LZs9KjdODc/0.jpg)](https://youtu.be/6LZs9KjdODc)
 
 ## Setup
 
@@ -63,9 +65,9 @@ export OPENAI_API_KEY="your_openai_api_key"
    python CLGSCE.py -m NL -t advanced
    ```
 
-   -m, --method {GSCE,self-refine,numerical,NL}, the default method is "NL".
+   -m, --method {GSCE, self-refine, numerical, NL}, the default method is "NL".
 
-   -t, --task {basic,advanced}, the default task set is "advanced".
+   -t, --task {basic, advanced}, the default task set is "advanced".
 
 5. See evaluation results in `/log` folder.
 
