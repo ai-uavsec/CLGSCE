@@ -51,14 +51,14 @@ export OPENAI_API_KEY="your_openai_api_key"
    cd CLGSCE
    ``` 
 
-2. Open AirSim "block" or other "pre-built" environment, make sure the environment has a open space (at least a 20-meter cubic) for drone flight.
+2. Open AirSim "block" or other "pre-built" environment and select multirotor in the pop up window. Make sure the selected environment has a open space (at least a 20-meter cubic) for drone flight.
 
 3. Active the virtual environment created in [Python](#python) setup.
 
 4. Run python file.
 
    ```bash
-   python CLGSCE.py -m NL -t advanced
+   python main.py -m NL -t advanced
    ```
 
    -m, --method {GSCE, self-refine, numerical, NL}, the default method is "NL".
