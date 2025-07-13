@@ -161,7 +161,7 @@ for it in range(repeat):
 				# if feedback is NO, refine the code
 				elif "NO" in feedback:
 					if correction == refinement_time and "NO" in feedback:
-						print(f"****No further correction for task {i} on the {it} repeat****")
+						print(f"****No further correction for task {i} on the {it} repeat, human intervention needed****")
 						break
 					
 					# refinement prompt for code generator
