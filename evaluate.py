@@ -171,7 +171,7 @@ def NL_observation(response, task_prompt):
                     exec(code)
                     code = ""
             except SyntaxError:
-                code += line
+                code += line  + "/n"
             
             # log runtime errors into the NL observation
             except NameError as e:
@@ -358,7 +358,7 @@ def numerical_observation(response):
                     exec(code)
                     code = ""
             except SyntaxError:
-                code += line
+                code += line  + "/n"
             # log runtime errors into the NL observation
             except NameError as e:
                 description = "NameError occurred: " + f" {e}"
