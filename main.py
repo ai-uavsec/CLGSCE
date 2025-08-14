@@ -66,7 +66,7 @@ feedback_history = [
     }
 ]
 
-# -------------------- LLM Request Functions --------------------
+# -------------------- OpenAI Request Functions --------------------
 # the LLM generate response according to all chat history (for code generation and refinement).
 def request(prompt, model_name):
     code_history.append(
@@ -107,7 +107,7 @@ def request_single_step(history, prompt, model_name):
     return response
 
 # -------------------- Experiment Parameters --------------------
-repeat = 1	# code generation repeat times
+repeat = 3	# code generation repeat times
 evaluate = 1 # flag for whether evaluating generated code within this script
 refinement_time = 6	# correction times for each task
 model_name = "o3-mini" # the model is "o3-mini-2025-01-31" when conducting the experiment
