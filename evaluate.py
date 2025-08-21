@@ -258,15 +258,15 @@ def NL_observation(response, task_prompt):
                         ## movement in x axis of world frame
                         if abs(x_round) > 1 and abs(y_round) <= 1:
                             if x_round < 0:
-                                movement =  f"Fly {-round(x_round/5)*5} meters South in the world axis while facing {orientation}. The drone moves to[{round(current_state[0]/5)*5}, {round(current_state[1]/5)*5}]. "
+                                movement =  f"Fly {-round(x_round/5)*5} meters South in the world axis while facing {orientation}. The drone moves to[{round(current_state[0]/5)*5}, {round(current_state[1]/5)*5}, {round(current_state[2]/5)*5}]. "
                             else:
-                                movement = f"Fly {round(x_round/5)*5} meters North in the world axis while facing {orientation}. The drone moves to [{round(current_state[0]/5)*5}, {round(current_state[1]/5)*5}]. "
+                                movement = f"Fly {round(x_round/5)*5} meters North in the world axis while facing {orientation}. The drone moves to [{round(current_state[0]/5)*5}, {round(current_state[1]/5)*5}, {round(current_state[2]/5)*5}]. "
                         elif abs(x_round) <= 1 and abs(y_round) > 1:
                             ## movement in y axis of world frame
                             if y_round < 0:
-                                movement = f"Fly {-round(y_round/5)*5} meters West in the world axis while facing {orientation}. The drone moves to [{round(current_state[0]/5)*5}, {round(current_state[1]/5)*5}]. "
+                                movement = f"Fly {-round(y_round/5)*5} meters West in the world axis while facing {orientation}. The drone moves to [{round(current_state[0]/5)*5}, {round(current_state[1]/5)*5}, {round(current_state[2]/5)*5}]. "
                             else:
-                                movement = f"Fly {round(y_round/5)*5} meters East in the world axis while facing {orientation}. The drone moves to [{round(current_state[0]/5)*5}, {round(current_state[1]/5)*5}]. "
+                                movement = f"Fly {round(y_round/5)*5} meters East in the world axis while facing {orientation}. The drone moves to [{round(current_state[0]/5)*5}, {round(current_state[1]/5)*5}, {round(current_state[2]/5)*5}]. "
                         else:
                             movement = f"The drone moves to [{round(current_state[0])}, {round(current_state[1])}] while facing {orientation}."
                         description += movement
@@ -362,7 +362,7 @@ def numerical_observation(response):
                     
             except SyntaxError:
                 code += line
-                
+
             # log runtime errors into the NL observation
             except NameError as e:
                 description = "NameError occurred: " + f" {e}"
