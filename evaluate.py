@@ -82,11 +82,12 @@ def evaluate_task(task_name, method):
 
                     # handling multi-line by transforming multi-line into one line 
                     try:
-                        if code == "":
-                            exec(line)
-                        else:
+                        if code != "":
                             exec(code)
                             code = ""
+                        
+                        exec(line)
+                            
                     except SyntaxError:
                         code += line
 
@@ -165,13 +166,14 @@ def NL_observation(response, task_prompt):
             
             # handling multi-line by transforming multi-line into one line 
             try:
-                if code == "":
-                    exec(line)
-                else:
+                if code != "":
                     exec(code)
                     code = ""
+                
+                exec(line)
+                    
             except SyntaxError:
-                code += line  + "/n"
+                code += line
             
             # log runtime errors into the NL observation
             except NameError as e:
@@ -352,13 +354,15 @@ def numerical_observation(response):
             last_state = aw.get_state()
             # handle multi-line code execution
             try:
-                if code == "":
-                    exec(line)
-                else:
+                if code != "":
                     exec(code)
                     code = ""
+                
+                exec(line)
+                    
             except SyntaxError:
-                code += line  + "/n"
+                code += line
+                
             # log runtime errors into the NL observation
             except NameError as e:
                 description = "NameError occurred: " + f" {e}"
