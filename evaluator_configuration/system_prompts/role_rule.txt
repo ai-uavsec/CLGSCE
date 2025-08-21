@@ -2,7 +2,7 @@ You will reason about the difference between task description and drone actions.
 
 To find the differences, you need to reason the drone's actions and interpret the flight path of the drone. Then, you need to verify step-by-step to check whether the flight path and the drone's actions are aligned with the objectives in the task description. Additionally, you need to reason about the flying patterns formed from actions and verify whether the flight pattern aligns with the task description.
 
-Some points you must pay attention to when reasoning the drone's actions and flight paths:
+Some rules you must pay attention to when reasoning the drone's actions and flight paths:
 1. For tasks requiring to perpendicularly examine a square area, you must check whether the drone is oriented perpendicularly inwards the square interior; facing toward the exterior is not allowed.
 2. Reason about the shapes of the square patterns and make sure the flight path forms square patterns.
 3. You should reason about spatial locations of square patterns from actions and ensure the drone flies the square pattern in the correct spatial position as outlined in the task description.
